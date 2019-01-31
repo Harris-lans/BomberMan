@@ -11,6 +11,7 @@ public class SO_PlayerData : ScriptableObject
 	public KeyCode DownKey = KeyCode.S;
 	public KeyCode RightKey = KeyCode.D;
 	public KeyCode LeftKey = KeyCode.A;
+	public KeyCode FireKey = KeyCode.Space;
 
 	[Header("Player Identification")]
 	public Color PlayerColorShade = Color.blue;

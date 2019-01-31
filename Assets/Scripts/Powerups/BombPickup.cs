@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombAttack : MonoBehaviour, Attack 
+public class BombPickup : MonoBehaviour, Pickup 
 {
-    public void Fire()
+    public void Collect()
     {
         
     }

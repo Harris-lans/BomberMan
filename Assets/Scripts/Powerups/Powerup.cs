@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Attack 
+public interface Powerup 
 {
-	void Fire();
+	void Activate();
 }

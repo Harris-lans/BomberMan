@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombAttack : MonoBehaviour, Attack 
+public class ExplosionRadiusPowerup : MonoBehaviour, Powerup 
 {
-    public void Fire()
+    public void Activate()
     {
         
     }
+
 }
