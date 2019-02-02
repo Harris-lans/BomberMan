@@ -43,22 +43,22 @@ public class PhysicsMover : MonoBehaviour, Mover
 
 		public void MoveDown()
 		{
-			_CurrentVelocity += -1 * _TransformReference.Reference.right.normalized;
+			_CurrentVelocity += -1 * _TransformReference.Reference.forward.normalized;
 		}
 
 		public void MoveLeft()
 		{
-			_CurrentVelocity += _TransformReference.Reference.forward.normalized;
+			_CurrentVelocity += -1 * _TransformReference.Reference.right.normalized;
 		}
 
 		public void MoveRight()
 		{
-			_CurrentVelocity += -1 * _TransformReference.Reference.forward.normalized;
+			_CurrentVelocity +=  _TransformReference.Reference.right.normalized;
 		}
 
 		public void MoveUp()
 		{
-			_CurrentVelocity += _TransformReference.Reference.right.normalized;
+			_CurrentVelocity += _TransformReference.Reference.forward.normalized;
 		}
 
 	#endregion

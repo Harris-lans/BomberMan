@@ -6,6 +6,6 @@ public class SpeedBoostPowerup : MonoBehaviour, Powerup
 {
     public void Activate()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

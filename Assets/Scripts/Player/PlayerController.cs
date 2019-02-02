@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(Attack))]
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
 			}
 
 			// Attacks
-			if (Input.GetKey(PlayerData.FireKey))
+			if (Input.GetKeyDown(PlayerData.FireKey))
 			{
 				_Attack.Fire();
 			} 
