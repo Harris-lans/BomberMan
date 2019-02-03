@@ -2,10 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoteBombsPowerup : MonoBehaviour, Powerup 
+public class RemoteBombsPowerup : Powerup 
 {
-    public void Activate()
+    [SerializeField]
+    private ABomb _RemoteBombPrefab;
+
+    public override void Activate()
     {
-        
+        base.Activate();
+        SO_BombAttackStats bombAttackStats = _Owner.GetComponent<PlayerController>().PlayerData.BombAttackStats;
+        bombAttackStats.BombPrefab = _RemoteBombPrefab;
     }
+
+    public override void Deactivate()
+    {
+        base.Deactivate();
+        SO_BombAttackStats bombAttackStats = _Owner.GetComponent<PlayerController>().PlayerData.BombAttackStats;
+        bombAttackStats.ResetBomb();
+    } 
 }

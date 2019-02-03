@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91898e7512ef76c4fb8601ad9bc0c7ef, type: 3}
+  m_Name: Player2BombAttackStats
+  m_EditorClassIdentifier: 
+  _BombPrefab: {fileID: 114128642588837278, guid: a364e713076beea4195150b772f71774,
+    type: 2}
+  _ExplosionTime: 3
+  _ExplosionPrefab: {fileID: 1465146584376180, guid: a3812ba6f9d958449bfb2b512d2d4050,
+    type: 2}
+  _ExplosionRadius: 2
+  _ExplosionDirections:
+  - {x: 1, y: 0, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: -1}
+  BombPrefab: {fileID: 0}
+  ExplosionTime: 0
+  ExplosionPrefab: {fileID: 0}
+  ExplosionRadius: 0
+  ExplosionDirections: []

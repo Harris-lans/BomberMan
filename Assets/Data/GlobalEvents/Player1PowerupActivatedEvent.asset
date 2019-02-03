@@ -8,7 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b54bde85d064b04e804a90f260149ac, type: 3}
-  m_Name: CameraTransformReference
+  m_Script: {fileID: 11500000, guid: 3fa295de31ecd1e4cb993722a071add7, type: 3}
+  m_Name: Player1PowerupActivatedEvent
   m_EditorClassIdentifier: 
-  Reference: {fileID: 0}

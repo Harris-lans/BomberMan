@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MovementSpeed: 3
-  _TransformReference: {fileID: 11400000, guid: 24374f0e3f5237f4ab638d021b15a024,
+  _TransformReference: {fileID: 11400000, guid: 27bf3acf09437524ea76fe06543351c9,
     type: 2}
 --- !u!114 &816537724
 MonoBehaviour:
@@ -752,9 +752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44a2c82fe9c8a242a6015d92983f158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _AttackTag: {fileID: 0}
   _Ammo: 10
-  _BombPrefab: {fileID: 114217991266712192, guid: b06ffc931c81595449b1fc7f929a4f87,
-    type: 2}
   BombFiredEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1725,7 +1724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643eb4affb53a7a4587e8c75e934c4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TransformReference: {fileID: 11400000, guid: 24374f0e3f5237f4ab638d021b15a024,
+  _TransformReference: {fileID: 11400000, guid: 27bf3acf09437524ea76fe06543351c9,
     type: 2}
 --- !u!1 &1948043970
 GameObject:

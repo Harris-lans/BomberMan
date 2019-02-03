@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombPickup : MonoBehaviour, Pickup 
+public class BombPickup : MonoBehaviour 
 {
-    public void Collect()
-    {
-        
-    }
+    
 }

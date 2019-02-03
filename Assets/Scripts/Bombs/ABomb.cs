@@ -6,63 +6,64 @@ public abstract class ABomb : MonoBehaviour
 {
 	#region Member Variables
 
-		[Header("Bomb Explosion Details")]
-		[SerializeField]
-		protected float _ExplosionTime = 3;
-		[SerializeField]
-		protected GameObject _ExplosionPrefab;
-		[SerializeField]
-		protected float _ExplosionRadius;
-		[SerializeField]
-		protected Vector3[] _ExplosionDirections;
-
 		protected BombAttack _Owner;
+		protected SO_BombAttackStats _BombStats;
 
 	#endregion
 
-	private void Awake() 
-	{
-		// Normalizing Directions in case the 
-		for (int i = 0; i < _ExplosionDirections.Length; ++i)
-		{
-			_ExplosionDirections[i].Normalize();
-		}	
-	}
+	#region Life Cycle
 
-	protected virtual void Explode()
-	{
-		// Directional Explosion
-		foreach (var direction in _ExplosionDirections)
+		private void Start() 
 		{
-			// Instantiating the explosion
-			GameObject explosion = Instantiate(_ExplosionPrefab);
-			Vector3 pointOfReachOfExplosion = transform.position + (direction * _ExplosionRadius);
-			RaycastHit raycastHit;
-			
-			if (Physics.Raycast(transform.position, direction, out raycastHit, _ExplosionRadius))
+			// Normalizing Directions in case the 
+			for (int i = 0; i < _BombStats.ExplosionDirections.Length; ++i)
 			{
-				pointOfReachOfExplosion = raycastHit.point;
-			}
-			
-			// Placing the explosion in the middle
-			explosion.transform.position = ((transform.position - pointOfReachOfExplosion) / 2) + transform.position;
-
-			// Rotating the explosion
-			explosion.transform.rotation = Quaternion.FromToRotation(Vector3.up, (transform.position - pointOfReachOfExplosion));
-
-			// Scaling the lightning arc
-			Vector3 currentScale = explosion.transform.localScale;
-			currentScale.y = Vector3.Magnitude(transform.position - pointOfReachOfExplosion) / 2; 
-			explosion.transform.localScale = currentScale;
-
-			Destroy(explosion.gameObject, _ExplosionTime); 
+				_BombStats.ExplosionDirections[i].Normalize();
+			}	
 		}
 
-		Destroy(gameObject);
-	}
+	#endregion
 
-	public void Initialize(BombAttack owner)
-	{
-		_Owner = owner;
-	}
+
+	#region Member Functions
+
+		protected virtual void Explode()
+		{
+			// Directional Explosion
+			foreach (var direction in _BombStats.ExplosionDirections)
+			{
+				// Instantiating the explosion
+				GameObject explosion = Instantiate(_BombStats.ExplosionPrefab);
+				Vector3 pointOfReachOfExplosion = transform.position + (direction * _BombStats.ExplosionRadius);
+				RaycastHit raycastHit;
+				
+				if (Physics.Raycast(transform.position, direction, out raycastHit, _BombStats.ExplosionRadius))
+				{
+					pointOfReachOfExplosion = raycastHit.point;
+				}
+				
+				// Placing the explosion in the middle
+				explosion.transform.position = ((transform.position - pointOfReachOfExplosion) / 2) + transform.position;
+
+				// Rotating the explosion
+				explosion.transform.rotation = Quaternion.FromToRotation(Vector3.up, (transform.position - pointOfReachOfExplosion));
+
+				// Scaling the lightning arc
+				Vector3 currentScale = explosion.transform.localScale;
+				currentScale.y = Vector3.Magnitude(transform.position - pointOfReachOfExplosion) / 2; 
+				explosion.transform.localScale = currentScale;
+
+				Destroy(explosion.gameObject, _BombStats.ExplosionTime); 
+			}
+
+			Destroy(gameObject);
+		}
+
+		public void Initialize(BombAttack owner, SO_BombAttackStats stats)
+		{
+			_Owner = owner;
+			_BombStats = stats;
+		}
+
+	#endregion
 }

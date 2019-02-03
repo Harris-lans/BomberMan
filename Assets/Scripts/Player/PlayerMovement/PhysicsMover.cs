@@ -8,14 +8,11 @@ public class PhysicsMover : MonoBehaviour, Mover
 {
 	#region Member Variables
 
-		[Header("Movement Speed")]
-		[SerializeField]
-		private float _MovementSpeed;
-
 		[Header("Reference for Movement Direction")]
 		[SerializeField]
 		private TransformReference _TransformReference;
 
+		private SO_MovementStats _MovementStats;
 		private Rigidbody _Rigidbody;
 		private Vector3 _CurrentVelocity;
 
@@ -27,11 +24,14 @@ public class PhysicsMover : MonoBehaviour, Mover
 		{
 			_Rigidbody = GetComponent<Rigidbody>();
 			_CurrentVelocity = Vector3.zero;
+			var playerController = GetComponent<PlayerController>();
+            _MovementStats = playerController.PlayerData.MovementStats;
+            _MovementStats.Initialize();
 		}
 
 		private void FixedUpdate() 
 		{
-			_Rigidbody.velocity = _CurrentVelocity * _MovementSpeed;
+			_Rigidbody.velocity = _CurrentVelocity * _MovementStats.MovementSpeed;
 
 			// Resetting the velocity for the next fixed update
 			_CurrentVelocity = Vector3.zero;

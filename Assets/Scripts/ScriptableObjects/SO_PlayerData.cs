@@ -15,4 +15,12 @@ public class SO_PlayerData : ScriptableObject
 
 	[Header("Player Identification")]
 	public Color PlayerColorShade = Color.blue;
+
+	[Header("Global Events")]
+	public SO_GenericEvent PowerupActivatedEvent;
+	public SO_GenericEvent PowerupDeactivatedEvent;
+
+	[Header("Stats")]
+	public SO_BombAttackStats BombAttackStats;
+	public SO_MovementStats MovementStats;
 }
