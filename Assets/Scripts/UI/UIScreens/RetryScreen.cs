@@ -11,7 +11,7 @@ public class RetryScreen : UIScreen
 	[SerializeField]
 	private SO_GenericEvent _Player2DeathEvent;
 	[SerializeField]
-	private SO_GenericEvent _GameTimerOver;
+	private SO_GenericEvent _GameTimerOverEvent;
 	[SerializeField]
 	private SO_MatchState _MatchState;
 	[SerializeField]
@@ -23,35 +23,44 @@ public class RetryScreen : UIScreen
 	[SerializeField]
 	private Text _GameResultText;
 
-	private void OnEnable()
+	public override void Initialize()
 	{
 		_Player1DeathEvent.AddListenerToEvent(OnPlayer1Death);
 		_Player2DeathEvent.AddListenerToEvent(OnPlayer2Death);
-		_GameTimerOver.AddListenerToEvent(OnGameTimerOver);
+		_GameTimerOverEvent.AddListenerToEvent(OnGameTimerOver);
 	}
 
-	private void OnDisable()
+	private void OnDestroy()
 	{
 		_Player1DeathEvent.RemoveListenerToEvent(OnPlayer1Death);
 		_Player2DeathEvent.RemoveListenerToEvent(OnPlayer2Death);
-		_GameTimerOver.RemoveListenerToEvent(OnGameTimerOver);
+		_GameTimerOverEvent.RemoveListenerToEvent(OnGameTimerOver);
 	}
 
 	private void OnPlayer1Death(object data)
 	{
-		_GameResultText.text = "Player 2 Wins";
-		_MatchState.Player2Score++;
+		if (!_MatchState.MatchOver)
+		{
+			_GameResultText.text = "Player 2 Wins";
+			_MatchState.Player2Score++;
+			_MatchState.MatchOver = true;
+		}
 	}
 
 	private void OnPlayer2Death(object data)
 	{
-		_GameResultText.text = "Player 1 Wins";
-		_MatchState.Player1Score++;
+		if (!_MatchState.MatchOver)
+		{
+			_GameResultText.text = "Player 1 Wins";
+			_MatchState.Player1Score++;
+			_MatchState.MatchOver = true;
+		}
 	}
 
 	private void OnGameTimerOver(object data)
 	{
 		_GameResultText.text = "It's a Draw";
+		_MatchState.MatchOver = true;
 	}
 
 	public void OnSelectRetry()

@@ -24,12 +24,12 @@ public abstract class Powerup : MonoBehaviour
 	
 	#region Member Functions
 
-		private void Awake()
+		private void OnEnable()
 		{
 			SpawnedPowerups.Add(this);
 		}
 
-		private void OnDestroy()
+		private void OnDisable()
 		{
 			SpawnedPowerups.Remove(this);
 		}

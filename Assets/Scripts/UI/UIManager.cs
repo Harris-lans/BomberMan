@@ -26,6 +26,7 @@ public class UIManager : SingletonBehaviour<UIManager>
 			foreach(var screen in screens)
 			{
 				_RegisteredScreens[screen.UIScreenTag] = screen;
+				screen.Initialize();
 			}
 		}
 

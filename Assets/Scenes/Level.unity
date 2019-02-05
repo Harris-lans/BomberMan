@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 896486384}
   - component: {fileID: 896486388}
   - component: {fileID: 896486389}
+  - component: {fileID: 896486390}
   m_Layer: 0
   m_Name: DestructibleWall (1)
   m_TagString: Untagged
@@ -1179,6 +1180,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 1448597113422686, guid: 30f025b5223960b449b7260a69ad5b03,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 896486390}
+        m_MethodName: SpawnPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1266,6 +1278,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd1f9efdbdbf1e44b52f89b5fbcdfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &896486390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 896486382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0dbf4be7756b447bd172de8511ae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PickupPool:
+  - {fileID: 1953148698093042, guid: fe6b29d21107933409bfcf53cc1691a9, type: 2}
+  - {fileID: 1914904866648894, guid: 58f5f15df197335458a9759367fe5418, type: 2}
+  - {fileID: 1426895781950498, guid: 6c30d39024115f448b4119b3c9d195eb, type: 2}
+  - {fileID: 1108343418426988, guid: 9aaec18bca852b243a58cc659c30b5b8, type: 2}
+  _ChanceToSpawn: 25
 --- !u!1 &954039567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1539,7 @@ GameObject:
   - component: {fileID: 1220802087}
   - component: {fileID: 1220802088}
   - component: {fileID: 1220802092}
+  - component: {fileID: 1220802093}
   m_Layer: 0
   m_Name: DestructibleWall (3)
   m_TagString: Untagged
@@ -1552,6 +1582,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 1448597113422686, guid: 30f025b5223960b449b7260a69ad5b03,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1220802093}
+        m_MethodName: SpawnPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1639,6 +1680,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd1f9efdbdbf1e44b52f89b5fbcdfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1220802093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220802085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0dbf4be7756b447bd172de8511ae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PickupPool:
+  - {fileID: 1953148698093042, guid: fe6b29d21107933409bfcf53cc1691a9, type: 2}
+  - {fileID: 1914904866648894, guid: 58f5f15df197335458a9759367fe5418, type: 2}
+  - {fileID: 1426895781950498, guid: 6c30d39024115f448b4119b3c9d195eb, type: 2}
+  - {fileID: 1108343418426988, guid: 9aaec18bca852b243a58cc659c30b5b8, type: 2}
+  _ChanceToSpawn: 25
 --- !u!1 &1339553797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1796,7 @@ GameObject:
   - component: {fileID: 1405293878}
   - component: {fileID: 1405293882}
   - component: {fileID: 1405293883}
+  - component: {fileID: 1405293884}
   m_Layer: 0
   m_Name: DestructibleWall (2)
   m_TagString: Untagged
@@ -1780,6 +1839,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 1448597113422686, guid: 30f025b5223960b449b7260a69ad5b03,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1405293884}
+        m_MethodName: SpawnPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1867,6 +1937,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd1f9efdbdbf1e44b52f89b5fbcdfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1405293884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405293876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0dbf4be7756b447bd172de8511ae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PickupPool:
+  - {fileID: 1953148698093042, guid: fe6b29d21107933409bfcf53cc1691a9, type: 2}
+  - {fileID: 1914904866648894, guid: 58f5f15df197335458a9759367fe5418, type: 2}
+  - {fileID: 1426895781950498, guid: 6c30d39024115f448b4119b3c9d195eb, type: 2}
+  - {fileID: 1108343418426988, guid: 9aaec18bca852b243a58cc659c30b5b8, type: 2}
+  _ChanceToSpawn: 25
 --- !u!1 &1420036557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2382,7 @@ GameObject:
   - component: {fileID: 1578400986}
   - component: {fileID: 1578400990}
   - component: {fileID: 1578400991}
+  - component: {fileID: 1578400992}
   m_Layer: 0
   m_Name: DestructibleWall
   m_TagString: Untagged
@@ -2337,6 +2425,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 1448597113422686, guid: 30f025b5223960b449b7260a69ad5b03,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1578400992}
+        m_MethodName: SpawnPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2424,6 +2523,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd1f9efdbdbf1e44b52f89b5fbcdfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1578400992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1578400984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0dbf4be7756b447bd172de8511ae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PickupPool:
+  - {fileID: 1953148698093042, guid: fe6b29d21107933409bfcf53cc1691a9, type: 2}
+  - {fileID: 1914904866648894, guid: 58f5f15df197335458a9759367fe5418, type: 2}
+  - {fileID: 1426895781950498, guid: 6c30d39024115f448b4119b3c9d195eb, type: 2}
+  - {fileID: 1108343418426988, guid: 9aaec18bca852b243a58cc659c30b5b8, type: 2}
+  _ChanceToSpawn: 25
 --- !u!1 &1631829343
 GameObject:
   m_ObjectHideFlags: 0

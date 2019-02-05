@@ -5,15 +5,17 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour 
 {
 	private SO_GenericEvent _PlayerDeathEvent;
+	private bool _Dead;
 
 	private void Start()
 	{
 		_PlayerDeathEvent = GetComponent<PlayerController>().PlayerData.PlayerDeathEvent;
+		_Dead = false;
 	}
 
 	public void Kill()
 	{
-		_PlayerDeathEvent.Invoke(null);
 		Destroy(gameObject);
+		_PlayerDeathEvent.Invoke(null);
 	}
 }

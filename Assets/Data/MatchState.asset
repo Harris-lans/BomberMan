@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Name: MatchState
   m_EditorClassIdentifier: 
   Player1Score: 0
-  Player2Score: 0
+  Player2Score: 1
+  MaximumMatchTime: 10
+  MatchTime: 7
+  MatchOver: 1

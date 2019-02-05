@@ -20,9 +20,8 @@ public class PowerupSpawner : MonoBehaviour
 			while (!canSpawnAtPoint)
 			{
 				chosenSpawnPoint = _PowerupSpawnPoints[Random.Range(0, _PowerupSpawnPoints.Length)];
-				RaycastHit raycastHit;
+				// Checking if a player or a pickcup is already in that location
 				Collider[] colliders = Physics.OverlapBox(chosenSpawnPoint.transform.position,new Vector3 (0.5f, 1.5f, 0.5f));
-				
 				canSpawnAtPoint = true;
 				foreach (var collider in colliders)
 				{

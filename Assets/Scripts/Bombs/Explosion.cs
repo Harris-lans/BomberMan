@@ -11,7 +11,6 @@ public class Explosion : MonoBehaviour
 	private void OnTriggerEnter(Collider collider)
 	{
 		PlayerHealth playerHealth = collider.GetComponent<PlayerHealth>();
-		
 		if (playerHealth != null)
 		{
 			playerHealth.Kill();

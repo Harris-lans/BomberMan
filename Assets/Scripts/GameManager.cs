@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
 	private void OnEnable() 
 	{
+		// Subscribing to global events
 		foreach (var playerData in _PlayerDatas)
 		{
 			playerData.PlayerDeathEvent.AddListenerToEvent(OnMatchOver);
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
 
 	private void OnDisable()
 	{
+		// Unsubcscribing from global events
 		foreach (var playerData in _PlayerDatas)
 		{
 			playerData.PlayerDeathEvent.RemoveListenerToEvent(OnMatchOver);
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
 
 	private void OnMatchOver(object data)
 	{
+		_MatchState.ResetMatchTimer();
 		_UIManager.SetScreen(_GameOverScreen);
 		SceneManager.LoadScene("MainMenu");
 	}

@@ -366,7 +366,8 @@ MonoBehaviour:
   UIScreenTag: {fileID: 11400000, guid: 4621a6fef7499d240ab5fd6b03576408, type: 2}
   _Player1DeathEvent: {fileID: 11400000, guid: 8e42943dc3bfb4d4e8faf898dbea8f5a, type: 2}
   _Player2DeathEvent: {fileID: 11400000, guid: a4d12866d7d21ea4ba4652a35221bc48, type: 2}
-  _GameTimerOver: {fileID: 11400000, guid: a09d91d0005be104c9ddac20763e8132, type: 2}
+  _GameTimerOverEvent: {fileID: 11400000, guid: a09d91d0005be104c9ddac20763e8132,
+    type: 2}
   _MatchState: {fileID: 11400000, guid: a536fea6e9050304e8def14cac2a2cf5, type: 2}
   _MainMenuScreenTag: {fileID: 11400000, guid: cdf112ec76f712143a286ae5ea251baa, type: 2}
   _InGameScreenTag: {fileID: 11400000, guid: 0f61ea8a98c5fad48a4f68e2ebe6ac88, type: 2}

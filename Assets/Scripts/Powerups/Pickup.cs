@@ -9,11 +9,23 @@ public class Pickup : MonoBehaviour
 	
 	[Header("Number of bombs available")]
     [SerializeField]
-    private int _AmmoToAdd = 3;
+    private int _AmmoToAdd;
+
+    private bool _PickedUp;
+
+    private void Start()
+    {
+        _PickedUp = false;
+    }
 
     public int Collect()
     {
-        Destroy(gameObject);
-        return _AmmoToAdd;
+        if (!_PickedUp)
+        {
+            Destroy(gameObject);
+            _PickedUp = true;
+            return _AmmoToAdd;
+        }
+        return 0;
     }
 }

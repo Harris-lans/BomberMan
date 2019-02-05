@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UIScreen : MonoBehaviour 
+public abstract class UIScreen : MonoBehaviour 
 {
 	#region Member Variables
 		
@@ -21,6 +21,11 @@ public class UIScreen : MonoBehaviour
 		{
 			_UIManager = UIManager.Instance;
 		}
+
+        public virtual void Initialize()
+        {
+            
+        }
 
 	#endregion
 
