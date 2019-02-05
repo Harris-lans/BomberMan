@@ -57,7 +57,7 @@ MonoBehaviour:
   PowerupSprite: {fileID: 21300000, guid: 76ad642356444534582c0f5ddb4ff1b3, type: 3}
   _PowerupTime: 10
   _Owner: {fileID: 0}
-  _NewMovementSpeed: 5
+  _NewMovementSpeed: 6
 --- !u!135 &135792465672565824
 SphereCollider:
   m_ObjectHideFlags: 1

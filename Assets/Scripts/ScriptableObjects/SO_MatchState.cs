@@ -25,5 +25,6 @@ public class SO_MatchState : ScriptableObject
 	public void ResetMatchTimer()
 	{
 		MatchTime = MaximumMatchTime;
+		MatchOver = false;
 	}
 }
