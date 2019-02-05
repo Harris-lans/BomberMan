@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class PowerupUI : MonoBehaviour 
 {
-	public Powerup Powerup;
+	public APowerup Powerup;
 	[SerializeField]
 	private Image _PowerupSpriteRenderer;
 	[SerializeField]
 	private Slider _Slider; 
 
-	public void Initialize(Powerup powerup)
+	public void Initialize(APowerup powerup)
 	{
 		_PowerupSpriteRenderer.sprite = powerup.PowerupSprite;
 		StartCoroutine(PowerupTimer(powerup.PowerupTime));

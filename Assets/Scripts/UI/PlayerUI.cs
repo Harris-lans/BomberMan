@@ -33,7 +33,7 @@ public class PlayerUI : MonoBehaviour
 
 	private void OnPowerupActivated(object data)
 	{
-		Powerup powerup = (Powerup)data;
+		APowerup powerup = (APowerup)data;
 
 		// Checking if the powerup is already active and removing the UI
 		PowerupUI[] powerupUIs = _PowerupContainer.GetComponentsInChildren<PowerupUI>();

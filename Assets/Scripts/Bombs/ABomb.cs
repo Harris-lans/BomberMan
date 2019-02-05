@@ -29,8 +29,9 @@ public abstract class ABomb : MonoBehaviour
 
 	#region Member Functions
 
-		protected virtual void Explode()
+		public virtual void Explode()
 		{
+			Destroy(gameObject);
 			// Directional Explosion
 			foreach (var direction in _BombStats.ExplosionDirections)
 			{
@@ -60,8 +61,6 @@ public abstract class ABomb : MonoBehaviour
 
 				Destroy(explosion.gameObject, _BombStats.ExplosionTime); 
 			}
-
-			Destroy(gameObject);
 		}
 
 		public void Initialize(BombAttack owner, SO_BombAttackStats stats)

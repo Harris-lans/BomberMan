@@ -13,7 +13,7 @@ public class PowerupSpawner : MonoBehaviour
 	
 	private void Update () 
 	{
-		if (Powerup.SpawnedPowerups != null && Powerup.SpawnedPowerups.Count < _MaximumNumberOfPowerupsAtATime)
+		if (APowerup.SpawnedPowerups != null && APowerup.SpawnedPowerups.Count < _MaximumNumberOfPowerupsAtATime)
 		{
 			Transform chosenSpawnPoint = _PowerupSpawnPoints[Random.Range(0, _PowerupSpawnPoints.Length)];
 			bool canSpawnAtPoint = false;
@@ -25,7 +25,7 @@ public class PowerupSpawner : MonoBehaviour
 				canSpawnAtPoint = true;
 				foreach (var collider in colliders)
 				{
-					if (collider.GetComponent<Powerup>() != null || collider.GetComponent<Pickup>() != null || collider.GetComponent<PlayerController>() != null)
+					if (collider.GetComponent<APowerup>() != null || collider.GetComponent<Pickup>() != null || collider.GetComponent<PlayerController>() != null)
 					{
 						canSpawnAtPoint = false;
 					}

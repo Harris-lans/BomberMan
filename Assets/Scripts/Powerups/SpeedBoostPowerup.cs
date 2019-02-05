@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedBoostPowerup : Powerup
+public class SpeedBoostPowerup : APowerup
 {
     [SerializeField]
     private float _NewMovementSpeed;

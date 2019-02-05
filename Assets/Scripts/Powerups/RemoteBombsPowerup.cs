@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoteBombsPowerup : Powerup 
+public class RemoteBombsPowerup : APowerup 
 {
     [SerializeField]
     private ABomb _RemoteBombPrefab;

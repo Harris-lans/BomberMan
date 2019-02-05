@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionRadiusPowerup : Powerup 
+public class ExplosionRadiusPowerup : APowerup 
 {
     [SerializeField]
     private float _NewExplosionRadius;

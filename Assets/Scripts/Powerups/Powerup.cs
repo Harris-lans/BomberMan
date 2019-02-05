@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Powerup : MonoBehaviour
+public abstract class APowerup : MonoBehaviour
 {
 	#region Member Variables
 
@@ -17,7 +17,7 @@ public abstract class Powerup : MonoBehaviour
 		[HideInInspector]
 		public PowerupManager _Owner;
 		protected PlayerController _PlayerController;
-		public static List<Powerup> SpawnedPowerups;
+		public static List<APowerup> SpawnedPowerups;
 
 	#endregion
 

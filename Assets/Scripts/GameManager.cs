@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 	{
 		SpawnPlayers();
 		_UIManager = UIManager.Instance; 
-		Powerup.SpawnedPowerups = new List<Powerup>();
+		APowerup.SpawnedPowerups = new List<APowerup>();
 	}
 
 	private void OnEnable() 

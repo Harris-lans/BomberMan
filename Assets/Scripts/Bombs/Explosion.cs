@@ -21,5 +21,16 @@ public class Explosion : MonoBehaviour
 		{
 			destructibleObjects.Damage(_DamageAmount);
 		}
+
+		if (collider.GetComponent<APowerup>() != null || collider.GetComponent<Pickup>() != null)
+		{
+			Destroy(collider.gameObject);
+		}
+
+		ABomb bomb = collider.GetComponent<ABomb>();
+		if (bomb != null)
+		{
+			bomb.Explode();
+		}
 	}
 }

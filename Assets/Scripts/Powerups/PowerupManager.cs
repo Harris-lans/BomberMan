@@ -6,7 +6,7 @@ public class PowerupManager : MonoBehaviour
 {
 	#region Member Variables
 
-		private List<Powerup> _Powerups;
+		private List<APowerup> _Powerups;
 		private SO_GenericEvent _PowerupDeactivatedEvent;
 
 	#endregion
@@ -15,7 +15,7 @@ public class PowerupManager : MonoBehaviour
 
 		private void Start()
 		{
-			_Powerups = new List<Powerup>();
+			_Powerups = new List<APowerup>();
 		}
 
 		private void OnEnable()
@@ -32,7 +32,7 @@ public class PowerupManager : MonoBehaviour
 
 		private void OnTriggerEnter(Collider collider)
 		{
-			Powerup powerup = collider.GetComponent<Powerup>();
+			APowerup powerup = collider.GetComponent<APowerup>();
 			if (powerup != null)
 			{
 				// Resetting a powerup if it has already been picked up
@@ -59,7 +59,7 @@ public class PowerupManager : MonoBehaviour
 
 		private void OnPowerupDeactivated(object data)
 		{
-			Powerup powerup = (Powerup)data;
+			APowerup powerup = (APowerup)data;
 			_Powerups.Remove(powerup);
 			Destroy(powerup.gameObject, 3);
 		}
