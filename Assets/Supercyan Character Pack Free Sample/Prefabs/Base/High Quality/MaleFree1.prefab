@@ -606,6 +606,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4889916270699016}
   - component: {fileID: 95612694983450844}
+  - component: {fileID: 136086069080653732}
+  - component: {fileID: 54412167123714886}
+  - component: {fileID: 114420597541692956}
+  - component: {fileID: 114856986651635542}
+  - component: {fileID: 114443033867662376}
+  - component: {fileID: 114112229340222504}
+  - component: {fileID: 136252862753733282}
   m_Layer: 0
   m_Name: MaleFree1
   m_TagString: Untagged
@@ -1068,8 +1075,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1968476592218994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.9706653, y: -0.01, z: 2.040329}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4447174194096642}
   - {fileID: 4716740120580238}
@@ -1176,6 +1183,21 @@ Transform:
   m_Father: {fileID: 4793713871126594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54412167123714886
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!95 &95612694983450844
 Animator:
   serializedVersion: 3
@@ -1194,6 +1216,86 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114112229340222504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca53de12027c53429e4a191a5ab2e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114420597541692956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbc64d9958788d40a2415b15557396d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerData: {fileID: 11400000, guid: 51fd70f20ed2dfe459b836a68c839f17, type: 2}
+--- !u!114 &114443033867662376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11085d7583138b54aabc3be97d67fe38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _TransformReference: {fileID: 11400000, guid: 27bf3acf09437524ea76fe06543351c9,
+    type: 2}
+--- !u!114 &114856986651635542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44a2c82fe9c8a242a6015d92983f158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AttackTag: {fileID: 11400000, guid: 0f4d9da1449aa794ab68101373459d86, type: 2}
+  BombFiredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  CanFireBomb: 0
+--- !u!136 &136086069080653732
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.21
+  m_Height: 1.02
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.51, z: 0}
+--- !u!136 &136252862753733282
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Material: {fileID: 13400000, guid: 9433461545af8a244b527356f9b8eff6, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.21
+  m_Height: 1.02
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.51, z: 0}
 --- !u!137 &137380874227758632
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

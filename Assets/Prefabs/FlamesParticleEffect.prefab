@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 198021993585386638}
   - component: {fileID: 199139828716008146}
   - component: {fileID: 136379587382229784}
+  - component: {fileID: 114682921417836836}
   m_Layer: 0
   m_Name: FlamesParticleEffect
   m_TagString: Untagged
@@ -104,6 +105,18 @@ Transform:
   m_Father: {fileID: 4161622251457806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114682921417836836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465146584376180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874912f73219b5641933b9671a78bae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DamageAmount: 25
 --- !u!136 &136379587382229784
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -111,10 +124,10 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465146584376180}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.04
-  m_Height: 3.28
+  m_Radius: 0.51
+  m_Height: 1.74
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198021993585386638

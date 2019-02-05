@@ -19,7 +19,10 @@ public class SO_GenericEvent : ScriptableObject
 
 	public void Invoke(object data)
 	{
-		_Event.Invoke(data);
+		if (_Event != null)
+		{
+			_Event.Invoke(data);
+		}
 	}
 
 	public delegate void GenericAction (object data);

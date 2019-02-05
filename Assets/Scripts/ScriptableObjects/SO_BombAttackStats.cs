@@ -8,6 +8,8 @@ public class SO_BombAttackStats : ScriptableObject
 	[Header("Bomb Details")]
 	[SerializeField]
 	private ABomb _BombPrefab;
+	[SerializeField]
+	private int _Ammo;
 
 	[Header("Bomb Explosion Details")]
 	[SerializeField]
@@ -22,6 +24,8 @@ public class SO_BombAttackStats : ScriptableObject
 	[HideInInspector]
 	public ABomb BombPrefab;
 	[HideInInspector]
+	public int Ammo;
+	[HideInInspector]
 	public float ExplosionTime;
 	[HideInInspector]
 	public GameObject ExplosionPrefab;
@@ -33,6 +37,7 @@ public class SO_BombAttackStats : ScriptableObject
 	public void Initialize()
 	{
 		BombPrefab = _BombPrefab;
+		Ammo = _Ammo;
 		ExplosionTime = _ExplosionTime;
 		ExplosionPrefab = _ExplosionPrefab;
 		ExplosionRadius = _ExplosionRadius;
@@ -42,6 +47,11 @@ public class SO_BombAttackStats : ScriptableObject
 	public void ResetBomb()
 	{
 		BombPrefab = _BombPrefab;
+	}
+
+	public void ResetAmmo()
+	{
+		Ammo = _Ammo;
 	}
 
 	public void ResetExplosionTime()

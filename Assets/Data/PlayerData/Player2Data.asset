@@ -16,10 +16,11 @@ MonoBehaviour:
   RightKey: 275
   LeftKey: 276
   FireKey: 303
-  PlayerColorShade: {r: 1, g: 0.12570582, b: 0, a: 1}
+  PlayerColorShade: {r: 0.9372549, g: 0.25490198, b: 0.16862746, a: 1}
   PowerupActivatedEvent: {fileID: 11400000, guid: 79d0c7345c20b5d46a557e28c9c5bc9c,
     type: 2}
   PowerupDeactivatedEvent: {fileID: 11400000, guid: 8c0d540084867e04e80b7be0a38eb38f,
     type: 2}
+  PlayerDeathEvent: {fileID: 11400000, guid: a4d12866d7d21ea4ba4652a35221bc48, type: 2}
   BombAttackStats: {fileID: 11400000, guid: 0fd2edcf6a0541c42bde71883434eebc, type: 2}
   MovementStats: {fileID: 11400000, guid: 6b390b329a65fc84b9606db71790cde9, type: 2}

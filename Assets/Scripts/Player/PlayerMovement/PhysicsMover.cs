@@ -15,6 +15,7 @@ public class PhysicsMover : MonoBehaviour, Mover
 		private SO_MovementStats _MovementStats;
 		private Rigidbody _Rigidbody;
 		private Vector3 _CurrentVelocity;
+		private Vector3 _DirectionToFace;
 
 	#endregion
 
@@ -32,7 +33,7 @@ public class PhysicsMover : MonoBehaviour, Mover
 		private void FixedUpdate() 
 		{
 			_Rigidbody.velocity = _CurrentVelocity * _MovementStats.MovementSpeed;
-
+			_Rigidbody.rotation = Quaternion.Slerp(_Rigidbody.rotation, Quaternion.LookRotation(_DirectionToFace, Vector3.up), Time.fixedDeltaTime * 2);
 			// Resetting the velocity for the next fixed update
 			_CurrentVelocity = Vector3.zero;
 		}
@@ -44,21 +45,25 @@ public class PhysicsMover : MonoBehaviour, Mover
 		public void MoveDown()
 		{
 			_CurrentVelocity += -1 * _TransformReference.Reference.forward.normalized;
+			_DirectionToFace = _CurrentVelocity;
 		}
 
 		public void MoveLeft()
 		{
 			_CurrentVelocity += -1 * _TransformReference.Reference.right.normalized;
+			_DirectionToFace = _CurrentVelocity;
 		}
 
 		public void MoveRight()
 		{
 			_CurrentVelocity +=  _TransformReference.Reference.right.normalized;
+			_DirectionToFace = _CurrentVelocity;
 		}
 
 		public void MoveUp()
 		{
 			_CurrentVelocity += _TransformReference.Reference.forward.normalized;
+			_DirectionToFace = _CurrentVelocity;
 		}
 
 	#endregion

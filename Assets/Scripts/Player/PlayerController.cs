@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
 
 		private void Update()
 		{
+			// Attacks
+			if (Input.GetKeyDown(PlayerData.FireKey))
+			{
+				_Attack.Fire();
+			} 
+
 			// Up and down movement of the character
 			if (Input.GetKey(PlayerData.UpKey))
 			{
@@ -46,13 +52,22 @@ public class PlayerController : MonoBehaviour
 			{
 				_Mover.MoveRight();
 			}
-
-			// Attacks
-			if (Input.GetKeyDown(PlayerData.FireKey))
-			{
-				_Attack.Fire();
-			} 
 		}
 
 	#endregion 
+
+	#region Member Functions
+
+		public void Initialize(SO_PlayerData playerData)
+		{
+			PlayerData = playerData;
+			Renderer renderer = GetComponentInChildren<Renderer>();
+			foreach (var material in renderer.materials)
+			{
+				material.color = playerData.PlayerColorShade;
+				material.SetColor("_EmissionColor", playerData.PlayerColorShade);
+			}
+		}
+
+	#endregion
 }

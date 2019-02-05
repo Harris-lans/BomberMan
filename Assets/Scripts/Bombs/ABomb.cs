@@ -6,6 +6,8 @@ public abstract class ABomb : MonoBehaviour
 {
 	#region Member Variables
 
+		[SerializeField]
+		protected float _Damage = 25;
 		protected BombAttack _Owner;
 		protected SO_BombAttackStats _BombStats;
 
@@ -39,14 +41,17 @@ public abstract class ABomb : MonoBehaviour
 				
 				if (Physics.Raycast(transform.position, direction, out raycastHit, _BombStats.ExplosionRadius))
 				{
-					pointOfReachOfExplosion = raycastHit.point;
+					if (raycastHit.collider.GetComponent<Explosion>() == null)
+					{
+						pointOfReachOfExplosion = raycastHit.point;
+					}
 				}
 				
 				// Placing the explosion in the middle
 				explosion.transform.position = ((transform.position - pointOfReachOfExplosion) / 2) + transform.position;
 
 				// Rotating the explosion
-				explosion.transform.rotation = Quaternion.FromToRotation(Vector3.up, (transform.position - pointOfReachOfExplosion));
+				explosion.transform.rotation = Quaternion.FromToRotation(Vector3.up, (pointOfReachOfExplosion - transform.position));
 
 				// Scaling the lightning arc
 				Vector3 currentScale = explosion.transform.localScale;

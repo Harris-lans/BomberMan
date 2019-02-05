@@ -16,15 +16,23 @@ public class PowerupManager : MonoBehaviour
 		private void Start()
 		{
 			_Powerups = new List<Powerup>();
+		}
+
+		private void OnEnable()
+		{
 			var playerController = GetComponent<PlayerController>();
-			_PowerupDeactivatedEvent = playerController.PlayerData.PowerupDeactivatedEvent;
-			_PowerupDeactivatedEvent.AddListenerToEvent(OnPowerupDeactivated);
+			playerController.PlayerData.PowerupDeactivatedEvent.AddListenerToEvent(OnPowerupDeactivated);
+		}
+
+		private void OnDisable()
+		{
+			var playerController = GetComponent<PlayerController>();
+			playerController.PlayerData.PowerupDeactivatedEvent.RemoveListenerToEvent(OnPowerupDeactivated);
 		}
 
 		private void OnTriggerEnter(Collider collider)
 		{
 			Powerup powerup = collider.GetComponent<Powerup>();
-
 			if (powerup != null)
 			{
 				// Resetting a powerup if it has already been picked up
@@ -37,8 +45,9 @@ public class PowerupManager : MonoBehaviour
 					}
 				}
 
-				// Creating a new instance of the power up
-				powerup = Instantiate(powerup);
+				// Picking up the power up
+				collider.gameObject.GetComponent<Renderer>().enabled = false;
+				collider.enabled = false;
 				powerup.transform.parent = transform;
 				powerup.Initialize(this);
 			}	
@@ -52,7 +61,7 @@ public class PowerupManager : MonoBehaviour
 		{
 			Powerup powerup = (Powerup)data;
 			_Powerups.Remove(powerup);
-			Destroy(powerup);
+			Destroy(powerup.gameObject, 3);
 		}
 
 	#endregion

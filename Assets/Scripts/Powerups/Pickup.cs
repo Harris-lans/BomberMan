@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup
+public class Pickup : MonoBehaviour
 {
 	[Header("Pickup Details")]
 	public SO_Tag PickupTag;
@@ -13,6 +13,7 @@ public class Pickup
 
     public int Collect()
     {
+        Destroy(gameObject);
         return _AmmoToAdd;
     }
 }

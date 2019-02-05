@@ -10,12 +10,11 @@ public class BombAttack : MonoBehaviour, Attack
         [SerializeField]
         private SO_Tag _AttackTag;
 
-        [SerializeField]
-        private int _Ammo = 10; 
-
         private SO_BombAttackStats _BombAttackStats;
         [HideInInspector]
-        public UnityEvent BombFiredEvent; 
+        public UnityEvent BombFiredEvent;
+        [HideInInspector]
+        public bool CanFireBomb;
 
     #endregion
     
@@ -23,7 +22,8 @@ public class BombAttack : MonoBehaviour, Attack
 
         private void Start()
         {
-            BombFiredEvent = null;
+            BombFiredEvent = new UnityEvent();
+            CanFireBomb = true;
             var playerController = GetComponent<PlayerController>();
             _BombAttackStats = playerController.PlayerData.BombAttackStats;
             _BombAttackStats.Initialize();
@@ -35,7 +35,7 @@ public class BombAttack : MonoBehaviour, Attack
             
             if (pickup != null && pickup.PickupTag == _AttackTag)
             {
-                _Ammo += pickup.Collect();
+                _BombAttackStats.Ammo += pickup.Collect();
             }
         }
 
@@ -45,18 +45,13 @@ public class BombAttack : MonoBehaviour, Attack
 
         public void Fire()
         {
-            if (_Ammo > 0 && BombFiredEvent == null)
+            if (_BombAttackStats.Ammo > 0 && CanFireBomb)
             {
-                BombFiredEvent = new UnityEvent();
                 ABomb bomb = Instantiate(_BombAttackStats.BombPrefab, transform.position, Quaternion.identity);
                 bomb.Initialize(this, _BombAttackStats);
-                --_Ammo;
+                --_BombAttackStats.Ammo;
             }
-            else
-            {
-                BombFiredEvent.Invoke();
-                BombFiredEvent = null; 
-            }
+            BombFiredEvent.Invoke();
         }
 
     #endregion
@@ -67,7 +62,7 @@ public class BombAttack : MonoBehaviour, Attack
         {
             get
             {
-                return _Ammo;
+                return _BombAttackStats.Ammo;
             }
         }
 

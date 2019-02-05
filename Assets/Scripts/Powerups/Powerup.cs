@@ -7,33 +7,39 @@ public abstract class Powerup : MonoBehaviour
 	#region Member Variables
 
 		[Header("Powerup Details")]
-		public SO_Tag AttackTag;
 		public SO_Tag PowerupTag;
+		public Sprite PowerupSprite;
 		[SerializeField]
 		private float _PowerupTime = 10;
 
 		private SO_GenericEvent _PowerupActivatedEvent;
 		private SO_GenericEvent _PowerupDeactivatedEvent;
+		[HideInInspector]
 		public PowerupManager _Owner;
+		protected PlayerController _PlayerController;
+		public static List<Powerup> SpawnedPowerups;
 
 	#endregion
 
-	#region Life Cycle
+	
+	#region Member Functions
 
 		private void Awake()
 		{
-			var owner = _Owner.GetComponent<PlayerController>();
-			_PowerupActivatedEvent = owner.PlayerData.PowerupActivatedEvent;
-			_PowerupDeactivatedEvent = owner.PlayerData.PowerupDeactivatedEvent;
+			SpawnedPowerups.Add(this);
 		}
 
-	#endregion
-	
-	#region Member Functions
+		private void OnDestroy()
+		{
+			SpawnedPowerups.Remove(this);
+		}
 		
 		public virtual void Initialize(PowerupManager owner)
 		{
 			_Owner = owner;
+			_PlayerController = _Owner.GetComponent<PlayerController>();
+			_PowerupActivatedEvent = _PlayerController.PlayerData.PowerupActivatedEvent;
+			_PowerupDeactivatedEvent = _PlayerController.PlayerData.PowerupDeactivatedEvent;
 			Activate();
 		}
 
@@ -52,6 +58,14 @@ public abstract class Powerup : MonoBehaviour
 		{
 			yield return new WaitForSeconds(_PowerupTime);
 			Deactivate();
+		}
+
+		public float PowerupTime
+		{
+			get
+			{
+				return _PowerupTime;
+			}
 		}
 
 	#endregion

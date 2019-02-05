@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BombPrefab: {fileID: 114128642588837278, guid: a364e713076beea4195150b772f71774,
     type: 2}
+  _Ammo: 10
   _ExplosionTime: 3
   _ExplosionPrefab: {fileID: 1465146584376180, guid: a3812ba6f9d958449bfb2b512d2d4050,
     type: 2}
@@ -23,6 +24,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: -1}
   BombPrefab: {fileID: 0}
+  Ammo: 0
   ExplosionTime: 0
   ExplosionPrefab: {fileID: 0}
   ExplosionRadius: 0

@@ -19,6 +19,7 @@ public class SO_PlayerData : ScriptableObject
 	[Header("Global Events")]
 	public SO_GenericEvent PowerupActivatedEvent;
 	public SO_GenericEvent PowerupDeactivatedEvent;
+	public SO_GenericEvent PlayerDeathEvent;
 
 	[Header("Stats")]
 	public SO_BombAttackStats BombAttackStats;
